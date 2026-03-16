@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital@0;1&family=Oswald:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  /* Legacy tokens (still used in some page CSS) */
+  --cyan: #3bb4a1;
+  --light-grey: #6d6e70;
+  --grey: #2d2d2d;
+  --yellow: #e6c233;
+  --dark-cyan: #013e38;
+  --red: #f56664;
+  --basefont: "Oswald", sans-serif;
+  --secfont: "Montserrat", sans-serif;
+
+  /* Landing-page light theme tokens */
+  --bg: #fdfdfd;
+  --surface: #ffffff;
+  --surface-2: #fff7cc;
+  --text: #111827;
+  --muted: #4b5563;
+  --muted-2: #6b7280;
+  --border: rgba(17, 24, 39, 0.12);
+
+  --brand-yellow: #e6c233;
+  --brand-line: #d4a017;
+  --brand-orange: #ea580c;
+
+  --shadow-sm: 0 8px 20px rgba(17, 24, 39, 0.08);
+  --shadow-md: 0 18px 40px rgba(17, 24, 39, 0.12);
+  --radius: 18px;
+
+  --font-display: "Josefin Sans", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: left;
+}
+
+/* Add padding to main content to account for fixed header */
+main, .container-fluid, .register_page, .login_page, .discover_page, .about_page, .profile_page, .edit_profile_page, .rating_page, .report_page, .chats_page {
+  padding-top: 10px;
+}
+
+/* Add padding to Routes container specifically */
+div > div > div[data-route] {
+  padding-top: 10px;
+}
+
+/* Ensure all page containers have proper spacing */
+.page-container {
+  padding-top: 10px;
+  min-height: calc(100vh - 10px);
+  padding-bottom: 80px; /* Add bottom padding to account for fixed footer */
+}
+
+/* Add specific padding for edit profile page since it uses register_page class */
+.register_page.edit-profile {
+  padding-top: 100px !important;
+}
+
+a {
+  color: inherit;
+}
+
+.theme-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.theme-surface:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.btn-brand {
+  background: var(--brand-yellow);
+  color: var(--text);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.btn-brand:hover {
+  background: var(--brand-line);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--brand-yellow), var(--brand-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+::-webkit-scrollbar-track {
+  border: 5px solid #00211e;
+  background-color: #00211e;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: #00211e;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--cyan);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 0;
+  width: 0;
+  display: none;
+}
