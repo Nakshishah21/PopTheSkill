@@ -331,7 +331,7 @@ const Chats = () => {
                         onClick={() => handleChatClick(chat.id)}
                         style={{
                           cursor: "pointer",
-                          padding: "15px 20px",
+                          padding: "10px 15px",
                           backgroundColor: selectedChat?.id === chat?.id ? "#fff3cd" : "transparent",
                           border: "none",
                           borderBottom: "1px solid rgba(17,24,39,0.1)",
@@ -362,7 +362,7 @@ const Chats = () => {
                         onClick={() => handleRequestClick(request)}
                         style={{
                           cursor: "pointer",
-                          padding: "15px 20px",
+                          padding: "10px 15px",
                           backgroundColor: selectedRequest && selectedRequest.id === request.id ? "#fff3cd" : "transparent",
                           border: "none",
                           borderBottom: "1px solid rgba(17,24,39,0.1)",
@@ -418,25 +418,18 @@ const Chats = () => {
           )}
         </div>
         {/* Right Section */}
-        <div className="container-chat" style={{ 
-          flex: 2, 
-          background: "#ffffff", 
-          borderRadius: "10px", 
-          boxShadow: "0 4px 20px rgba(230, 194, 51, 0.1)",
-          display: "flex",
-          flexDirection: "column",
-          height: "100%"
-        }}>
+        <div className="container-chat">
           {/* Profile Bar */}
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              padding: "20px 25px",
+              padding: "30px 25px",
               borderBottom: "1px solid rgba(17,24,39,0.1)",
               minHeight: "70px",
               backgroundColor: "#ffffff",
+              flexShrink: 0
             }}
           >
             {/* Profile Info */}
@@ -468,28 +461,14 @@ const Chats = () => {
                 </Button>
               </>
             ) : (
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
                 <span style={{ color: "#6c757d", fontFamily: "Montserrat, sans-serif", fontSize: "16px" }}>Select a chat to start messaging</span>
-                <Button 
-                  style={{
-                    backgroundColor: "var(--brand-yellow)",
-                    borderColor: "var(--brand-yellow)",
-                    color: "var(--text)",
-                    fontWeight: 600,
-                    borderRadius: "8px",
-                    padding: "8px 16px",
-                    fontSize: "14px"
-                  }} 
-                  onClick={() => toast.info("Please select a chat first")}
-                >
-                  Request Video Call
-                </Button>
               </div>
             )}
           </div>
 
           {/* Chat Interface */}
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", position: "relative", overflow: "hidden" }}>
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", position: "relative", minHeight: 0 }}>
             {/* Chat Messages */}
             <div
               style={{
@@ -498,32 +477,19 @@ const Chats = () => {
                 padding: "20px",
                 overflowY: "auto",
                 backgroundColor: "#fff7cc",
+                minHeight: 0
               }}
             >
               {selectedChat ? (
-                <ScrollableFeed forceScroll="true">
+                <ScrollableFeed forceScroll={true}>
                   {chatMessages.map((message, index) => {
-                    // console.log("user:", user._id);
-                    // console.log("sender:", message.sender);
                     return (
                       <div
                         key={index}
-                        style={{
-                          display: "flex",
-                          justifyContent: message.sender._id == user._id ? "flex-end" : "flex-start",
-                          marginBottom: "10px",
-                        }}
+                        className={`chat-message ${message.sender._id === user._id ? "chat-message--me" : "chat-message--them"}`}
                       >
                         <div
-                          style={{
-                            backgroundColor: message.sender._id === user._id ? "#ffeb99" : "#ffffff",
-                            color: "#111827",
-                            border: "1px solid rgba(17,24,39,0.12)",
-                            padding: "10px",
-                            borderRadius: "10px",
-                            maxWidth: "70%",
-                            textAlign: message.sender._id == user._id ? "right" : "left",
-                          }}
+                          className={`chat-bubble ${message.sender._id === user._id ? "chat-bubble--me" : "chat-bubble--them"}`}
                         >
                           {message.content}
                         </div>
@@ -552,15 +518,13 @@ const Chats = () => {
             {selectedChat && (
               <div
                 style={{
-                  position: "absolute",
-                  bottom: "0",
-                  left: "0",
-                  right: "0",
-                  padding: "10px",
+                  flexShrink: 0,
+                  padding: "15px",
                   borderTop: "1px solid rgba(17,24,39,0.12)",
                   display: "flex",
                   alignItems: "center",
                   backgroundColor: "#ffffff",
+                  gap: "10px"
                 }}
               >
                 <input
@@ -570,13 +534,15 @@ const Chats = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   style={{
                     flex: "1",
-                    padding: "12px",
+                    padding: "12px 16px",
                     borderRadius: "25px",
                     marginRight: "10px",
                     border: "2px solid var(--brand-yellow)",
                     backgroundColor: "#fff9e6",
                     fontFamily: "var(--font-body)",
-                    transition: "all 0.3s ease"
+                    transition: "all 0.3s ease",
+                    fontSize: "16px",
+                    minHeight: "40px"
                   }}
                 />
                 <Button variant="success" style={{ padding: "10px 20px", borderRadius: "5px" }} onClick={sendMessage}>

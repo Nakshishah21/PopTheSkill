@@ -1,6 +1,4 @@
-:root {
-  /* keep local :root empty; use global theme tokens from src/index.css */
-}
+
 
 h3 {
   font-family: var(--secfont);
