@@ -29,7 +29,7 @@ const LandingPage = () => {
 
   const heroTitle = {
     fontFamily: "Josefin Sans, sans-serif",
-    fontSize: "2rem",
+    fontSize: "2.5rem",
     lineHeight: 1.3,
     color: "#111827",
     marginBottom: "1rem",
@@ -38,7 +38,7 @@ const LandingPage = () => {
 
   const heroSubtitle = {
     fontFamily: "Montserrat, sans-serif",
-    fontSize: "0.95rem",
+    fontSize: "1.5rem",
     color: "#4b5563",
     marginBottom: "1.25rem",
   };
@@ -52,8 +52,8 @@ const LandingPage = () => {
   };
 
   const heroBody = {
-    fontFamily: "Montserrat, sans-serif",
-    fontSize: "0.9rem",
+    fontFamily: "calibri, sans-serif",
+    fontSize: "1.3rem",
     color: "#4b5563",
   };
 
@@ -64,7 +64,7 @@ const LandingPage = () => {
   };
 
   const heroImage = {
-    maxWidth: "350px",
+    maxWidth: "400px",
     width: "100%",
     transition: "transform 0.3s ease",
   };
@@ -82,15 +82,15 @@ const LandingPage = () => {
 
   const sectionTitle = {
     fontFamily: "Josefin Sans, sans-serif",
-    fontSize: "1.6rem",
+    fontSize: "2rem",
     lineHeight: 1.4,
     color: "#111827",
     marginBottom: "1rem",
   };
 
   const sectionText = {
-    fontFamily: "Montserrat, sans-serif",
-    fontSize: "0.9rem",
+    fontFamily: "calibri, sans-serif",
+    fontSize: "1.3rem",
     color: "#4b5563",
   };
 
@@ -103,11 +103,11 @@ const LandingPage = () => {
     position: "relative",
     paddingTop: "3rem",
     paddingBottom: "2.5rem",
-    clipPath: "ellipse(140% 100% at 50% 0%)",
+    /*clipPath: "ellipse(140% 100% at 50% 0%)",*/
   };
 
   const footerInner = {
-    maxWidth: "1100px",
+    maxWidth: "1300px",
     margin: "0 auto",
     padding: "0 1.5rem",
     display: "flex",

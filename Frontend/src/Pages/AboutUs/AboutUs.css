@@ -6,6 +6,40 @@
   justify-content: center;
 }
 
+.about-content {
+  max-width: 50vw;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  margin-left: 30px;
+  justify-content: center;
+}
+
+.about-title {
+  font-family: "Josefin Sans", sans-serif;
+  color: #111827;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.about-description {
+  font-family: "Montserrat", sans-serif;
+  color: #4b5563;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  text-align: left;
+  max-height: 80vh;
+}
+
+.about-image {
+  margin-top: 160px;
+  margin-right: 10px;
+  max-width: 40vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
 @media (max-width: 780px) {
   .content1-container {
     display: flex;
@@ -13,5 +47,27 @@
     justify-content: center;
     align-items: center;
     text-align: center !important;
+  }
+
+  .about-content {
+    max-width: 90vw;
+    margin-top: 60px;
+    margin-left: 0;
+  }
+
+  .about-title {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .about-description {
+    text-align: center;
+    max-height: none;
+  }
+
+  .about-image {
+    max-width: 90vw;
+    margin-top: 40px;
+    margin-right: 0;
   }
 }

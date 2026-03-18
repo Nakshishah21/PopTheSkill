@@ -11,6 +11,7 @@ import io from "socket.io-client";
 import ScrollableFeed from "react-scrollable-feed";
 import RequestCard from "./RequestCard";
 import "./Chats.css";
+import "../../styles/Layout.css";
 import Modal from "react-bootstrap/Modal";
 
 var socket;

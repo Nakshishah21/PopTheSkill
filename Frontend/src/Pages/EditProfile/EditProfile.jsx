@@ -84,7 +84,6 @@ const EditProfile = () => {
       toast.info("Uploading your pic please wait upload confirmation..");
       const response = await axios.post("/user/uploadPicture", data);
       toast.success("Pic uploaded successfully");
-      // setPic(response.data.data.url);
       console.log("Pic url:", response.data);
       setForm(() => {
         return {
@@ -104,7 +103,6 @@ const EditProfile = () => {
         }
       }
     }
-    // console.log(file);
   };
 
   const handleInputChange = (e) => {
@@ -125,7 +123,6 @@ const EditProfile = () => {
         [name]: value,
       }));
     }
-    // console.log("Form: ", form);
   };
 
   const handleAddSkill = (e) => {
@@ -165,7 +162,6 @@ const EditProfile = () => {
         skillsProficientAt: [...prevState.skillsProficientAt, skillsProficientAt],
       }));
     }
-    // console.log("Form: ", form);
   };
 
   const handleRemoveSkill = (e, temp) => {
@@ -381,33 +377,9 @@ const EditProfile = () => {
     }
   };
 
-  // const handleSubmit = async () => {
-  //   const check1 = validateRegForm();
-  //   const check2 = validateEduForm();
-  //   const check3 = validateAddForm();
-  //   if (check1 && check2 && check3) {
-  //     setSaveLoading(true);
-  //     try {
-  //       const { data } = await axios.post("/user/registered/updateDetails", form);
-  //       toast.success("Registration Successful");
-  //       console.log("Data: ", data.data);
-  //       navigate("/discover");
-  //     } catch (error) {
-  //       console.log(error);
-  //       if (error?.response?.data?.message) {
-  //         toast.error(error.response.data.message);
-  //       } else {
-  //         toast.error("Some error occurred");
-  //       }
-  //     } finally {
-  //       setSaveLoading(false);
-  //     }
-  //   }
-  // };
-
   return (
     <div className="register_page edit-profile">
-      <h1 className="m-4" style={{ fontFamily: "Oswald", color: "#3BB4A1" }}>
+      <h1 className="m-4" style={{ fontFamily: "Oswald", color: "black" }}>
         Update Profile Details
       </h1>
       {loading ? (
@@ -424,9 +396,8 @@ const EditProfile = () => {
             onSelect={(k) => setActiveKey(k)}
           >
             <Tab eventKey="registration" title="Registration">
-              {/* Name */}
               <div>
-                <label style={{ color: "#3BB4A1" }}>Name</label>
+                <label style={{ color: "black" }}>Name</label>
                 <br />
                 <input
                   type="text"
@@ -443,13 +414,12 @@ const EditProfile = () => {
                 />
               </div>
               <div className="mt-3">
-                <label style={{ color: "#3BB4A1" }}>Profile Photo</label>
+                <label style={{ color: "black" }}>Profile Photo</label>
                 <br />
                 <input type="file" accept="image/*" onChange={handleFileChange} />
               </div>
-              {/* Email */}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "black" }}>
                   Email
                 </label>
                 <br />
@@ -467,9 +437,8 @@ const EditProfile = () => {
                   disabled
                 />
               </div>
-              {/* Username */}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "black" }}>
                   Username
                 </label>
                 <br />
@@ -487,9 +456,8 @@ const EditProfile = () => {
                   placeholder="Enter your username"
                 />
               </div>
-              {/* Linkedin Profile Link*/}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "black" }}>
                   Linkedin Link
                 </label>
                 <br />
@@ -507,9 +475,8 @@ const EditProfile = () => {
                   placeholder="Enter your Linkedin link"
                 />
               </div>
-              {/* Github Profile Link*/}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "black" }}>
                   Github Link
                 </label>
                 <br />
@@ -527,9 +494,8 @@ const EditProfile = () => {
                   placeholder="Enter your Github link"
                 />
               </div>
-              {/* Portfolio Link */}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "black" }}>
                   Portfolio Link
                 </label>
                 <br />
@@ -547,9 +513,8 @@ const EditProfile = () => {
                   placeholder="Enter your portfolio link"
                 />
               </div>
-              {/* Skills Proficient At */}
               <div>
-                <label className="mt-3" style={{ color: "#3BB4A1" }}>
+                <label className="mt-3" style={{ color: "black" }}>
                   Skills Proficient At
                 </label>
                 <br />
@@ -584,9 +549,8 @@ const EditProfile = () => {
                   Add Skill
                 </button>
               </div>
-              {/* Skills to learn */}
               <div>
-                <label style={{ color: "#3BB4A1", marginTop: "20px" }}>Skills To Learn</label>
+                <label style={{ color: "", marginTop: "20px" }}>Skills To Learn</label>
                 <br />
                 <Form.Select
                   aria-label="Default select example"
@@ -638,7 +602,7 @@ const EditProfile = () => {
                       </button>
                     </span>
                   )}
-                  <label style={{ color: "#3BB4A1" }}>Institution Name</label>
+                  <label style={{ color: "black" }}>Institution Name</label>
                   <br />
                   <input
                     type="text"
@@ -653,7 +617,7 @@ const EditProfile = () => {
                     }}
                     placeholder="Enter your institution name"
                   />
-                  <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                  <label className="mt-2" style={{ color: "black" }}>
                     Degree
                   </label>
                   <br />
@@ -670,7 +634,7 @@ const EditProfile = () => {
                     }}
                     placeholder="Enter your degree"
                   />
-                  <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                  <label className="mt-2" style={{ color: "black" }}>
                     Grade/Percentage
                   </label>
                   <br />
@@ -689,7 +653,7 @@ const EditProfile = () => {
                   />
                   <div className="row w-100">
                     <div className="col-md-6">
-                      <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                      <label className="mt-2" style={{ color: "black" }}>
                         Start Date
                       </label>
                       <br />
@@ -707,7 +671,7 @@ const EditProfile = () => {
                       />
                     </div>
                     <div className="col-md-6">
-                      <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                      <label className="mt-2" style={{ color: "black" }}>
                         End Date
                       </label>
                       <br />
@@ -725,7 +689,7 @@ const EditProfile = () => {
                       />
                     </div>
                   </div>
-                  <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                  <label className="mt-2" style={{ color: "black" }}>
                     Description
                   </label>
                   <br />
@@ -779,7 +743,7 @@ const EditProfile = () => {
             </Tab>
             <Tab eventKey="longer-tab" title="Additional">
               <div>
-                <label style={{ color: "#3BB4A1", marginTop: "20px" }}>Bio (Max 500 Character)</label>
+                <label style={{ color: "black", marginTop: "20px" }}>Bio (Max 500 Character)</label>
                 <br />
                 <textarea
                   name="bio"
@@ -796,7 +760,7 @@ const EditProfile = () => {
                 ></textarea>
               </div>
               <div className="">
-                <label style={{ color: "#3BB4A1" }}>Projects</label>
+                <label style={{ color: "black" }}>Projects</label>
 
                 {form?.projects?.map((project, index) => (
                   <div className="border border-dark rounded-1 p-3 m-1" key={project?._id}>
@@ -813,7 +777,7 @@ const EditProfile = () => {
                         cross
                       </button>
                     </span>
-                    <label style={{ color: "#3BB4A1" }}>Title</label>
+                    <label style={{ color: "black" }}>Title</label>
                     <br />
                     <input
                       type="text"
@@ -828,7 +792,7 @@ const EditProfile = () => {
                       }}
                       placeholder="Enter your project title"
                     />
-                    <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                    <label className="mt-2" style={{ color: "black" }}>
                       Tech Stack
                     </label>
                     <br />
@@ -894,7 +858,7 @@ const EditProfile = () => {
                     </button>
                     <div className="row">
                       <div className="col-md-6">
-                        <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                        <label className="mt-2" style={{ color: "black" }}>
                           Start Date
                         </label>
                         <br />
@@ -912,7 +876,7 @@ const EditProfile = () => {
                         />
                       </div>
                       <div className="col-md-6">
-                        <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                        <label className="mt-2" style={{ color: "black" }}>
                           End Date
                         </label>
                         <br />
@@ -930,7 +894,7 @@ const EditProfile = () => {
                         />
                       </div>
                     </div>
-                    <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                    <label className="mt-2" style={{ color: "black" }}>
                       Project Link
                     </label>
                     <br />
@@ -948,7 +912,7 @@ const EditProfile = () => {
                       placeholder="Enter your project link"
                     />
 
-                    <label className="mt-2" style={{ color: "#3BB4A1" }}>
+                    <label className="mt-2" style={{ color: "black" }}>
                       Description
                     </label>
                     <br />
@@ -1000,170 +964,8 @@ const EditProfile = () => {
                 <button className="btn btn-warning" onClick={handleSaveAdditional} disabled={saveLoading}>
                   {saveLoading ? <Spinner animation="border" variant="primary" /> : "Save"}
                 </button>
-                {/* <button onClick={handleNext} className="mt-2 btn btn-primary">
-                  Next
-                </button> */}
               </div>
             </Tab>
-            {/* <Tab eventKey="Preview" title="Confirm Details">
-              <div>
-                <h3 style={{ color: "#3BB4A1", marginBottom: "20px" }} className="link w-100 text-center">
-                  Preview of the Form
-                </h3>
-                <div
-                  className="previewForm"
-                  style={{ fontFamily: "Montserrat, sans-serif", color: "#2d2d2d", marginBottom: "20px" }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link m-sm-0"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Name:</span>
-                    <span style={{ flex: 2 }}>{form.name || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Email ID:</span>
-                    <span style={{ flex: 2 }}>{form.email || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Username:</span>
-                    <span style={{ flex: 2 }}>{form.username || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Portfolio Link:</span>
-                    <span style={{ flex: 2 }}>{form.portfolioLink || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Github Link:</span>
-                    <span style={{ flex: 2 }}>{form.githubLink || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      flexWrap: "wrap",
-                      marginBottom: "10px",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Linkedin Link:</span>
-                    <span
-                      style={{
-                        width: "70vw",
-                        alignItems: "center",
-                        flex: 2,
-                        overflow: "hidden",
-                        whiteSpace: "nowrap",
-                        textOverflow: "ellipsis",
-                        marginBottom: "1.5rem",
-                      }}
-                    >
-                      {form.linkedinLink || "Yet to be filled"}
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Skills Proficient At:</span>
-                    <span style={{ flex: 2 }}>{form?.skillsProficientAt?.join(", ") || "Yet to be filled"}</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Skills To Learn:</span>
-                    <span style={{ flex: 2 }}>{form?.skillsToLearn?.join(", ") || "Yet to be filled"}</span>
-                  </div>
-
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "70vw",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: "1.5rem",
-                    }}
-                    className="link"
-                  >
-                    <span style={{ flex: 1, fontWeight: "bold", color: "#3BB4A1" }}>Bio:</span>
-                    <span style={{ flex: 2 }}>{form?.bio || "Yet to be filled"}</span>
-                  </div>
-                </div>
-                <div className="row">
-                  <button
-                    onClick={handleSubmit}
-                    style={{
-                      backgroundColor: "#3BB4A1",
-                      color: "white",
-                      padding: "10px 20px",
-                      border: "none",
-                      borderRadius: "5px",
-                      cursor: "pointer",
-                    }}
-                    className="w-50 d-flex m-auto text-center align-content-center justify-content-center"
-                  >
-                    {saveLoading ? <Spinner animation="border" variant="primary" /> : "Submit"}
-                  </button>
-                </div>
-              </div>
-            </Tab> */}
           </Tabs>
         </div>
       )}
