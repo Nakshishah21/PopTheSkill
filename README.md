@@ -1,6 +1,8 @@
-# SkillSwap
+# POPTHESKILLS
 
-SkillSwap is a MERN stack web platform designed to facilitate collaborative learning and skill development through peer-to-peer guidance. The platform emphasizes reciprocal knowledge exchange, industrial-grade security features, and user-friendly interfaces to create a dynamic learning environment.
+SkillSwap is a full-stack MERN-based web application that enables users to exchange skills through peer-to-peer collaboration. Instead of traditional paid learning, the platform promotes mutual knowledge sharing, where users can teach what they know and learn what they need.
+
+The system integrates real-time communication, secure authentication, and feedback mechanisms to create a dynamic and trustworthy learning ecosystem.
 
 ## Motivation
 
@@ -8,25 +10,31 @@ In today's fast-paced world, the acquisition of new skills is essential for pers
 
 ## Features
 
-- `Peers' Connection`:  chat interface enable direct communication after connecting request and acceptance and hands-on guidance.
-- `Industrial Security Features`: Utilizes Google OAuth 2.0 authentication and JSON Web Tokens (JWT) verification for database security.
-- `Rating and Feedback System`: Users can rate and give feedback on guidance sessions, enhancing credibility and accountability.
-- `Responsive Layout`: Ensures optimal usability across various devices for an enhanced learning experience.
+1) Peer Connection & Collaboration
+Send and accept connection requests, Real-time chat system using Socket.io, One-on-one skill exchange sessions
+2) Industrial-Grade Security
+Authentication using Google OAuth 2.0, Secure authorization via JWT (JSON Web Tokens),   Protected backend APIs and user sessions
+3) Real-Time Communication
+Instant messaging with Socket.io, Smooth and responsive chat interface, Enables hands-on guidance and interaction
+4) Rating & Feedback System
+Users can rate sessions, Provide feedback after skill exchange, Builds trust and credibility
+5) Responsive UI/UX
+Fully responsive design, Works across desktop, tablet, and mobile, Clean and intuitive interface
+6) Dashboard Feature
+The Dashboard provides a centralized overview of platform activity, User Dashboard, Total skills offered, Total skills requested, Active swap requests, Completed swaps, Notifications summary
+
 
 ## Technologies Used
 
-- `Frontend`: React.js, React Router, Context API, React-Bootstrap, Axios, React-Toastify, Socket.io-client.
+- `Frontend`: React.js, React Router, Context API, React-Bootstrap, Axios,  Socket.io-client.
 - `Backend`: Node.js, Express.js, MongoDB (MongoDB Atlas), Mongoose, Socket.io, JSON Web Token (JWT), Passport.js.
-- `Deployment`: Docker and Docker Compose
 - `Tools`: Google Cloud Console (OAuth), MongoDB Compass, Postman, Docker, Docker Compose, VSCode, Git, GitHub.
 
-## Screenshots
 
-See the screenshots of the project in the screenshots folder.
 
 ## Installation
 
-To run SkillSwap locally, follow these steps:
+To run PopTheSkill locally, follow these steps:
 
 ### Prerequisites
 
@@ -38,8 +46,8 @@ To run SkillSwap locally, follow these steps:
 ### Clone the Repo
 
 ```bash
-git clone https://github.com/HarshSharma20503/SkillSwap
-cd SkillSwap
+git clone <repo link>
+cd PopTheSkill-main
 ```
 
 ### Frontend Setup
@@ -97,54 +105,3 @@ npm run dev
 ```
 
 The frontend will be running on `http://localhost:8000`
-
-### Install and Setup through Docker
-
-Create a docker-compose.yml file in SkillSwap folder. Write the following in it.
-
-```yml
-version: '3'
-
-services:
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile.backend
-      args:
-        PORT: 8000
-        CORS_ORIGIN: "*"
-        MONGODB_URI: "mongodb+srv://<your-username>:<your-password>@cluster0.<your-project>.mongodb.net"
-        CLOUDINARY_CLOUD_NAME: "<your-cloudinary-cloud-name>"
-        CLOUDINARY_API_KEY: "<your-cloudinary-api-key>"
-        CLOUDINARY_API_SECRET: "<your-cloudinary-api-key>"
-        GOOGLE_CLIENT_ID: "<your-google-client-id>"
-        GOOGLE_CLIENT_SECRET: "<your-google-client-secret>"
-        GOOGLE_CALLBACK_URL: "http://localhost:8000/auth/google/callback"
-        JWT_SECRET: "<your-jwt-secret>"
-    ports:
-      - "8000:8000"
-
-  frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile.frontend
-      args:
-        VITE_LOCALHOST: "http://localhost:8000"
-        VITE_SERVER_URL = "<your-deployment-link>"
-    ports:
-      - "5173:5173"
-```
-
-Run the docker compose file by using the following command which will run both frontend and backend.
-
-```bash
-sudo docker-compose up
-```
-
-To remove the docker images use the following command
-
-```bash
-sudo docker-compose down --rmi all
-```
-
-Now you can run the website on `http://localhost:5173`
